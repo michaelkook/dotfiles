@@ -248,7 +248,56 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
+set foldmethod=indent
+
+" ----------- tmux -------------
+Bundle 'edkolev/tmuxline.vim'
 
 
+if exists('$TMUX')
+  function! TmuxOrSplitSwitch(wincmd, tmuxdir)
+    let previous_winnr = winnr()
+    silent! execute "wincmd " . a:wincmd
+    if previous_winnr == winnr()
+      call system("tmux select-pane -" . a:tmuxdir)
+      redraw!
+    endif
+  endfunction
 
+  let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
+  let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
+  let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
 
+  nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
+  nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
+  nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
+  nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
+else
+  map <C-h> <C-w>h
+  map <C-j> <C-w>j
+  map <C-k> <C-w>k
+  map <C-l> <C-w>l
+endif
+"------- tmuxline -----------
+"let g:tmuxline_theme = 'lightline_visual'
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'y'    : ['%R', '%a', '%Y']}
+"      \'z'    : '#H'}
+
+"let g:tmuxline_separators = {
+"    \ 'left' : '',
+"    \ 'left_alt': '>',
+"    \ 'right' : '',
+"    \ 'right_alt' : '<',
+"    \ 'space' : ' '}
+"
+"
+"-------/ tmuxline ----------
+
+"-------/ fugitive ----------
+Plugin 'tpope/vim-fugitive'
+
+"------- fugitive -----------
