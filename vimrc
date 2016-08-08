@@ -301,3 +301,9 @@ let g:tmuxline_preset = {
 Plugin 'tpope/vim-fugitive'
 
 "------- fugitive -----------
+
+
+" ------ ack ------------
+Plugin 'mileszs/ack.vim'
+
+"------/ ack -----------
