@@ -6,6 +6,12 @@
 "F3 - Goto definition
 "Tab - Complete / Jump to next completion mark
 "Shift-Tab - Jump to last completion mark
+"
+"INSTATLL PLUGIN
+"search -> :PluginSearch <name_of_plugin>
+"install -> :PluginInstall <gitname/name_of_plugin>
+"
+"autocompletion for python : https://github.com/davidhalter/jedi-vim
 
 
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -307,3 +313,35 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 
 "------/ ack -----------
+
+"------ Dash ------------
+"https://raw.githubusercontent.com/rizzatti/dash.vim/master/doc/dash.txt
+Plugin 'rizzatti/dash.vim'
+"------/ Dash -----------
+
+"------ misc ------------
+"https://github.com/xolox/vim-misc
+Plugin 'xolox/vim-misc'
+"------/ misc -----------
+
+"------ lua-ft ----------
+"https://github.com/xolox/vim-lua-ftplugin
+Plugin 'xolox/vim-lua-ftplugin'
+" This sets the default value for all buffers.
+:let g:lua_compiler_name = '/usr/local/bin/luac'
+
+" This is how you change the value for one buffer.
+":let b:lua_compiler_name = '/usr/local/bin/lualint'
+
+let g:lua_check_syntax = 1
+let g:lua_check_globals = 1
+let g:lua_complete_omni = 1
+"------/ luad-ft---------
+
+
+"--------- openresty ----------"
+"https://github.com/hexchain/vim-openresty
+PlugIn 'hexchain/vim-openresty'
+
+
+"---------/ openresty -----------"
