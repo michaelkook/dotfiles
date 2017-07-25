@@ -7,10 +7,12 @@
 
 ########## Variables
 
-dir=~/Documents/work_space/dotfiles/config/
-nvim_init=~/Documents/work_space/dotfiles/config/init.vim
+#dir=~/Documents/work_space/dotfiles/config/
+dir=~/dotfiles/config/
+#nvim_init=~/Documents/work_space/dotfiles/config/init.vim
+nvim_init=~/dotfiles/config/init.vim
 nvim_config_dir=~/.config/nvim
-olddir=~/Documents/work_space/dotfiles_old/
+olddir=~/dotfiles_old/
 files="tmux.conf tmux.conf.local" 
 
 ##########
