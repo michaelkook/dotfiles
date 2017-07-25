@@ -5,8 +5,6 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-########## Variables
-
 #dir=~/Documents/work_space/dotfiles/config/
 dir=~/dotfiles/config/
 #nvim_init=~/Documents/work_space/dotfiles/config/init.vim
@@ -14,8 +12,6 @@ nvim_init=~/dotfiles/config/init.vim
 nvim_config_dir=~/.config/nvim
 olddir=~/dotfiles_old/
 files="tmux.conf tmux.conf.local" 
-
-##########
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
