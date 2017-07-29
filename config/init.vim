@@ -45,7 +45,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'arielrossanigo/dir-configs-override.vim'
 
 " Autoformat
-Plug 'Chiel92/vim-autoformat', {"do": "pip install --user yapf","do": "npm -g install js-beautify"}
+Plug 'Chiel92/vim-autoformat', {'do': 'npm -g install js-beautify'}
 
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
@@ -133,7 +133,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
 " Yank history navigation
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 
 " Linters
 Plug 'neomake/neomake'
@@ -346,8 +346,8 @@ let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
 " Fix for yankring and neovim problem when system has non-text things copied
 " in clipboard
-let g:yankring_clipboard_monitor = 0
-let g:yankring_history_dir = '~/.config/nvim/'
+" let g:yankring_clipboard_monitor = 0
+" let g:yankring_history_dir = '~/.config/nvim/'
 set clipboard+=unnamedplus
 "if system('uname -s') == "Darwin\n"
 "  set clipboard=unnamed "OSX
