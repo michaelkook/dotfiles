@@ -44,6 +44,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Override configs by directory
 Plug 'arielrossanigo/dir-configs-override.vim'
 
+" Autoformat
+Plug 'Chiel92/vim-autoformat', {"do": "pip install --user yapf","do": "npm -g install js-beautify"}
+
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
 
@@ -85,6 +88,9 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
 
+" JS autocompletion
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
 " Automatically close parenthesis, etc
 Plug 'Townk/vim-autoclose'
 
@@ -92,10 +98,10 @@ Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-surround'
 
 " Indent text object
-Plug 'michaeljsmith/vim-indent-object'
+" Plug 'michaeljsmith/vim-indent-object'
 
 " Indentation based movements
-Plug 'jeetsukumaran/vim-indentwise'
+" Plug 'jeetsukumaran/vim-indentwise'
 
 " Better language packs
 Plug 'sheerun/vim-polyglot'
@@ -158,11 +164,22 @@ endif
 " Vim settings and mappings
 " You can edit them as you wish
 
+" Autoformat
+let g:formatter_yapf_style = 'pep8'
+noremap <F5> :Autoformat<CR>
+
 " tabs and spaces handling
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+set foldmethod=syntax
+
 
 " show line numbers
 set nu
