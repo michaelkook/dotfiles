@@ -9,7 +9,7 @@
 dir=~/dotfiles/config/
 #nvim_init=~/Documents/work_space/dotfiles/config/init.vim
 nvim_init=~/dotfiles/config/init.vim
-nvim_config_dir=~/.config/nvim
+nvim_config_dir=~/.config/nvim/:
 olddir=~/dotfiles_old/
 files="tmux.conf tmux.conf.local" 
 
